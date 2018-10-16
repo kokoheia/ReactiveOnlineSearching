@@ -12,15 +12,20 @@ import ReactiveSwift
 import ReactiveMapKit
 import Result
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource {
 
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var viewModel: ViewModel!
+    
+    let trackCell = "trackCell"
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //textFieldのテキストからSignalを形成
-        let searchStrings = textField.reactive.continuousTextValues
+        let searchStrings = searchBar.reactive.continuousTextValues
         
         //エラーにも対処できるSignal
         let searchResults = searchStrings
@@ -28,7 +33,7 @@ class ViewController: UIViewController {
                 let request = self.makeSearchRequest(escapedQuery: query)
                 
                 return URLSession.shared.reactive
-                    .data(with: request)
+                    .data(with: request!)
                     .retry(upTo: 2)
                     .flatMapError { error in
                         print("Network error occurred: \(error)")
@@ -57,15 +62,29 @@ class ViewController: UIViewController {
         
     }
     
-    private func makeSearchRequest(escapedQuery: String?) -> URLRequest {
-        let url = URL(string: "")
-        return URLRequest(url: url!)
+    private func makeSearchRequest(escapedQuery: String?) -> URLRequest? {
+        if var urlComponents = URLComponents(string: "https://itunes.apple.com/search"), let escapedQuery = escapedQuery {
+            urlComponents.query = escapedQuery
+            guard let url = urlComponents.url else { return nil }
+            return URLRequest(url: url)
+        } else {
+            return nil
+        }
+        
     }
     
     private func searchResults(fromJSONString: String) -> [String] {
         return [String]()
     }
-
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.getTrackCount()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: trackCell, for: indexPath)
+        return cell
+    }
+    
 }
 
