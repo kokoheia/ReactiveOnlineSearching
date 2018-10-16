@@ -9,18 +9,26 @@
 import Foundation
 import ReactiveSwift
 
-class Track {
-    let name: String
-    let artist: String
+class Track: Decodable {
+    let trackName: String
+    let artistName: String
     let previewURL: URL
     let index: Int
     var downloaded = false
     
     init(name: String, artist: String, previewURL: URL, index: Int) {
-        self.name = name
-        self.artist = artist
+        self.trackName = name
+        self.artistName = artist
         self.previewURL = previewURL
         self.index = index
+    }
+    
+    init(dict: Dictionary<String, String>) {
+        self.trackName = dict["trackName"]!
+        self.artistName = dict["artistName"]!
+        
+        self.previewURL = URL(string: "")!
+        self.index = 0
     }
     
 }

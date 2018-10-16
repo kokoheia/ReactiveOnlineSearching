@@ -30,8 +30,8 @@ struct CellViewModel {
     var downloaded = false
     
     init(with track: Track) {
-        self.name = track.name
-        self.artist = track.artist
+        self.name = track.trackName
+        self.artist = track.artistName
         self.previewURL = track.previewURL
         self.index = track.index
         self.downloaded = track.downloaded

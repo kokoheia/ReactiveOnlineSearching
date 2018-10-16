@@ -40,9 +40,11 @@ class ViewController: UIViewController, UITableViewDataSource {
                         return SignalProducer.empty
                 }
             }
-            .map { (data, response) -> [String] in
+            .map { (data, response) -> [Track] in
                 let string = String(data: data, encoding: .utf8)!
-                return self.searchResults(fromJSONString: string)
+                print(string)
+                
+                return self.searchResults(from: data)
             }
             .observe(on: UIScheduler())
         
@@ -64,8 +66,9 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     private func makeSearchRequest(escapedQuery: String?) -> URLRequest? {
         if var urlComponents = URLComponents(string: "https://itunes.apple.com/search"), let escapedQuery = escapedQuery {
-            urlComponents.query = escapedQuery
+            urlComponents.query = "media=music&entity=song&term=\(escapedQuery)"
             guard let url = urlComponents.url else { return nil }
+            
             return URLRequest(url: url)
         } else {
             return nil
@@ -73,8 +76,38 @@ class ViewController: UIViewController, UITableViewDataSource {
         
     }
     
-    private func searchResults(fromJSONString: String) -> [String] {
-        return [String]()
+    private func searchResults(from json: Data) -> [Track] {
+        var resultTracks = [Track]()
+        
+        do {
+            guard let json = try JSONSerialization.jsonObject(with: json, options: []) as? [String: Any] else {return []}
+            
+            if let results = json["results"] as? [Dictionary<String, String>] {
+                for dict in results {
+                    let track = Track(dict: dict)
+                    resultTracks.append(track)
+                }
+            }
+
+//            print(results.first)
+            
+
+//
+//            let dict = try JSONDecoder().decode([String: String].self, from: json)
+//            print(dict)
+//
+            
+//            return mapArray(json).map({
+//                let track = try JSONDecoder().decode(Track.self, from: $0)
+//                print(track.artistName)
+//            })
+//
+            
+        } catch {
+            
+        }
+        
+        return [Track]()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
