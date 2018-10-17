@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var viewModel: ViewModel!
-    
+
     let trackCell = "trackCell"
 
     
@@ -41,9 +41,6 @@ class ViewController: UIViewController, UITableViewDataSource {
                 }
             }
             .map { (data, response) -> [Track] in
-                let string = String(data: data, encoding: .utf8)!
-                print(string)
-                
                 return self.searchResults(from: data)
             }
             .observe(on: UIScheduler())
@@ -52,6 +49,7 @@ class ViewController: UIViewController, UITableViewDataSource {
             switch event {
             case let .value(results):
                 print("Search results: \(results)")
+//                self.tableView.reloadData()
                 
             case let .failed(error):
                 print("Search error: \(error)")
@@ -82,32 +80,21 @@ class ViewController: UIViewController, UITableViewDataSource {
         do {
             guard let json = try JSONSerialization.jsonObject(with: json, options: []) as? [String: Any] else {return []}
             
-            if let results = json["results"] as? [Dictionary<String, String>] {
+            if let results = json["results"] as? [Dictionary<String, Any>] {
+                print(results)
+                
                 for dict in results {
                     let track = Track(dict: dict)
                     resultTracks.append(track)
                 }
+                print(resultTracks)
             }
-
-//            print(results.first)
             
-
-//
-//            let dict = try JSONDecoder().decode([String: String].self, from: json)
-//            print(dict)
-//
-            
-//            return mapArray(json).map({
-//                let track = try JSONDecoder().decode(Track.self, from: $0)
-//                print(track.artistName)
-//            })
-//
-            
-        } catch {
-            
+        } catch let jsonErr {
+            print("Error serializing json: ", jsonErr)
         }
         
-        return [Track]()
+        return resultTracks
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

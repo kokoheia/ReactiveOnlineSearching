@@ -12,23 +12,23 @@ import ReactiveSwift
 class Track: Decodable {
     let trackName: String
     let artistName: String
-    let previewURL: URL
-    let index: Int
-    var downloaded = false
+//    let previewURL: URL
+//    let index: Int
+//    var downloaded = false
     
     init(name: String, artist: String, previewURL: URL, index: Int) {
         self.trackName = name
         self.artistName = artist
-        self.previewURL = previewURL
-        self.index = index
+//        self.previewURL = previewURL
+//        self.index = index
     }
     
-    init(dict: Dictionary<String, String>) {
-        self.trackName = dict["trackName"]!
-        self.artistName = dict["artistName"]!
+    init(dict: Dictionary<String, Any>) {
+        self.trackName = dict["trackName"] as! String
+        self.artistName = dict["artistName"] as! String
         
-        self.previewURL = URL(string: "")!
-        self.index = 0
+//        self.previewURL = URL(string: "")!
+//        self.index = 0
     }
     
 }
