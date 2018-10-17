@@ -12,37 +12,11 @@
 		55D0602C2175935C0046A000 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55D0602A2175935C0046A000 /* Main.storyboard */; };
 		55D0602E2175935E0046A000 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55D0602D2175935E0046A000 /* Assets.xcassets */; };
 		55D060312175935E0046A000 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55D0602F2175935E0046A000 /* LaunchScreen.storyboard */; };
-		55D0603B217595A40046A000 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D06039217595A40046A000 /* Result.framework */; };
-		55D0603D217595AA0046A000 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D0603A217595A40046A000 /* ReactiveSwift.framework */; };
-		55D0603E217595AA0046A000 /* ReactiveSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55D0603A217595A40046A000 /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		55D06040217595AA0046A000 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55D06039217595A40046A000 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		55D0604421759D840046A000 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D0604221759D840046A000 /* ReactiveCocoa.framework */; };
-		55D0604521759D840046A000 /* ReactiveMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D0604321759D840046A000 /* ReactiveMapKit.framework */; };
-		55D0604621759D8A0046A000 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D0604221759D840046A000 /* ReactiveCocoa.framework */; };
-		55D0604721759D8A0046A000 /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55D0604221759D840046A000 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		55D0604821759D8A0046A000 /* ReactiveMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D0604321759D840046A000 /* ReactiveMapKit.framework */; };
-		55D0604921759D8A0046A000 /* ReactiveMapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55D0604321759D840046A000 /* ReactiveMapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55D060542176CAB40046A000 /* Changeset.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D060532176CAB40046A000 /* Changeset.framework */; };
 		9E9010962175E16600BE9AD3 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9010952175E16600BE9AD3 /* Track.swift */; };
 		9E9010982175E1A000BE9AD3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9010972175E1A000BE9AD3 /* ViewModel.swift */; };
 		9E90109C2175F28B00BE9AD3 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E90109B2175F28B00BE9AD3 /* TrackCell.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		55D06041217595AB0046A000 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				55D0603E217595AA0046A000 /* ReactiveSwift.framework in Embed Frameworks */,
-				55D0604921759D8A0046A000 /* ReactiveMapKit.framework in Embed Frameworks */,
-				55D0604721759D8A0046A000 /* ReactiveCocoa.framework in Embed Frameworks */,
-				55D06040217595AA0046A000 /* Result.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		55D060232175935C0046A000 /* ReactiveOnlineSearching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveOnlineSearching.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +30,7 @@
 		55D0603A217595A40046A000 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		55D0604221759D840046A000 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		55D0604321759D840046A000 /* ReactiveMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveMapKit.framework; path = Carthage/Build/iOS/ReactiveMapKit.framework; sourceTree = "<group>"; };
+		55D060532176CAB40046A000 /* Changeset.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Changeset.framework; path = Carthage/Build/iOS/Changeset.framework; sourceTree = "<group>"; };
 		9E9010952175E16600BE9AD3 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		9E9010972175E1A000BE9AD3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		9E90109B2175F28B00BE9AD3 /* TrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
@@ -66,12 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55D0604421759D840046A000 /* ReactiveCocoa.framework in Frameworks */,
-				55D0604521759D840046A000 /* ReactiveMapKit.framework in Frameworks */,
-				55D0603B217595A40046A000 /* Result.framework in Frameworks */,
-				55D0604821759D8A0046A000 /* ReactiveMapKit.framework in Frameworks */,
-				55D0603D217595AA0046A000 /* ReactiveSwift.framework in Frameworks */,
-				55D0604621759D8A0046A000 /* ReactiveCocoa.framework in Frameworks */,
+				55D060542176CAB40046A000 /* Changeset.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +84,7 @@
 		55D06038217595A40046A000 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				55D060532176CAB40046A000 /* Changeset.framework */,
 				55D0604221759D840046A000 /* ReactiveCocoa.framework */,
 				55D0604321759D840046A000 /* ReactiveMapKit.framework */,
 				55D0603A217595A40046A000 /* ReactiveSwift.framework */,
@@ -132,7 +103,7 @@
 				55D0601F2175935C0046A000 /* Sources */,
 				55D060202175935C0046A000 /* Frameworks */,
 				55D060212175935C0046A000 /* Resources */,
-				55D06041217595AB0046A000 /* Embed Frameworks */,
+				55D060572176D05F0046A000 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -188,6 +159,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		55D060572176D05F0046A000 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Changeset.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveMapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		55D0601F2175935C0046A000 /* Sources */ = {

@@ -11,12 +11,14 @@ import ReactiveCocoa
 import ReactiveSwift
 import ReactiveMapKit
 import Result
+//import Changeset
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
     
-    var viewModel: ViewModel!
+    var viewModel: ViewModel?
 
     let trackCell = "trackCell"
 
@@ -24,9 +26,12 @@ class ViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         //textFieldのテキストからSignalを形成
         let searchStrings = searchBar.reactive.continuousTextValues
-        
+ 
         //エラーにも対処できるSignal
         let searchResults = searchStrings
             .flatMap(.latest) { (query: String?) -> SignalProducer<(Data, URLResponse), AnyError> in
@@ -49,8 +54,13 @@ class ViewController: UIViewController, UITableViewDataSource {
             switch event {
             case let .value(results):
                 print("Search results: \(results)")
-//                self.tableView.reloadData()
+                self.viewModel = ViewModel(tracks: results)
+                self.tableView.reloadData()
                 
+//                self.viewModel?.trackChangeset.producer.startWithValues { edits in
+//                    self.tableView.update(with: edits)
+//                }
+//
             case let .failed(error):
                 print("Search error: \(error)")
                 
@@ -98,11 +108,12 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.getTrackCount()
+        return viewModel?.getTrackCount() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: trackCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: trackCell, for: indexPath) as! TrackCell
+        cell.viewModel = self.viewModel?.createCellViewModel(for: indexPath.row)
         return cell
     }
     

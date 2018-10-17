@@ -117,6 +117,7 @@
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="u1P-so-d1b" id="sdh-Cc-HsU"/>
+                        <outlet property="tableView" destination="DpR-kb-3dd" id="1c8-wC-u6e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

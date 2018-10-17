@@ -8,9 +8,22 @@
 
 import Foundation
 import ReactiveSwift
+//import Changeset
+
 
 class ViewModel {
-    private var tracks = [Track]()
+    
+//    let trackChangeset = MutableProperty([Changeset<[Track]>.Edit]())
+    
+    private var tracks: [Track]
+    
+//    {
+////        didSet {
+////            trackChangeset.value = Changeset.edits(
+////            from: oldValue,
+////            to: tracks)
+////        }
+//    }
     
     func getTrackCount() -> Int {
         return tracks.count
@@ -20,20 +33,24 @@ class ViewModel {
         return CellViewModel(with: tracks[index])
     }
     
+    init(tracks: [Track]) {
+        self.tracks = tracks
+    }
+    
 }
 
 struct CellViewModel {
     let name: String
     let artist: String
 //    let previewURL: URL
-//    let index: Int
+    let index: Int
 //    var downloaded = false
     
     init(with track: Track) {
         self.name = track.trackName
         self.artist = track.artistName
 //        self.previewURL = track.previewURL
-//        self.index = track.index
+        self.index = track.index
 //        self.downloaded = track.downloaded
     }
 }
