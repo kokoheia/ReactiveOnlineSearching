@@ -9,7 +9,7 @@
 import Foundation
 import ReactiveSwift
 
-class Track: Decodable {
+class Track: Decodable, Equatable {
     
     let trackName: String
     let artistName: String
@@ -36,13 +36,13 @@ class Track: Decodable {
 //        self.index = 0
     }
     
-//    static func == (lhs: Track, rhs: Track) -> Bool {
-//        if lhs.trackName == rhs.trackName, lhs.artistName == rhs.artistName {
-//            return true
-//        } else {
-//            return false
-//        }
-//    }
+    static func == (lhs: Track, rhs: Track) -> Bool {
+        if lhs.trackName == rhs.trackName, lhs.artistName == rhs.artistName {
+            return true
+        } else {
+            return false
+        }
+    }
     
 //    func generate() -> Generatortype {
 //        return self
