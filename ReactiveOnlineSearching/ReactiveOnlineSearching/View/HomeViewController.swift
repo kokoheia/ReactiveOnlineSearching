@@ -13,13 +13,12 @@ import ReactiveMapKit
 import Result
 //import Changeset
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel: ViewModel?
-
+    var viewModel: HomeViewModel?
     let trackCell = "trackCell"
 
     
@@ -31,12 +30,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         //textFieldのテキストからSignalを形成
         let searchStrings = searchBar.reactive.continuousTextValues
- 
-        //エラーにも対処できるSignal
+
         let searchResults = searchStrings
             .flatMap(.latest) { (query: String?) -> SignalProducer<(Data, URLResponse), AnyError> in
                 let request = self.makeSearchRequest(escapedQuery: query)
-                
                 return URLSession.shared.reactive
                     .data(with: request!)
                     .retry(upTo: 2)
@@ -54,7 +51,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             switch event {
             case let .value(results):
                 print("Search results: \(results)")
-                self.viewModel = ViewModel(tracks: results)
+                self.viewModel = HomeViewModel(tracks: results)
                 self.tableView.reloadData()
                 
 //                self.viewModel?.trackChangeset.producer.startWithValues { edits in

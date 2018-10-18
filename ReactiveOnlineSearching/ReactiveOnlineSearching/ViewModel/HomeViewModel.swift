@@ -11,7 +11,7 @@ import ReactiveSwift
 //import Changeset
 
 
-class ViewModel {
+class HomeViewModel {
     
 //    let trackChangeset = MutableProperty([Changeset<[Track]>.Edit]())
     
@@ -42,15 +42,16 @@ class ViewModel {
 struct CellViewModel {
     let name: String
     let artist: String
-//    let previewURL: URL
     let index: Int
+    
+//    let previewURL: URL
 //    var downloaded = false
     
     init(with track: Track) {
         self.name = track.trackName
         self.artist = track.artistName
-//        self.previewURL = track.previewURL
         self.index = track.index
+//        self.previewURL = track.previewURL
 //        self.downloaded = track.downloaded
     }
 }

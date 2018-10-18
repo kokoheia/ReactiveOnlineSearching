@@ -11,24 +11,27 @@ import ReactiveSwift
 
 class Track: Decodable {
     
-
     let trackName: String
     let artistName: String
-//    let previewURL: URL
     let index: Int
+    
+//    let previewURL: URL
 //    var downloaded = false
     
     init(name: String, artist: String, previewURL: URL, index: Int) {
         self.trackName = name
         self.artistName = artist
-//        self.previewURL = previewURL
         self.index = index
+        
+//        self.previewURL = previewURL
+
     }
     
     init(dict: Dictionary<String, Any>) {
         self.trackName = dict["trackName"] as! String
         self.artistName = dict["artistName"] as! String
         self.index = 0
+        
 //        self.previewURL = URL(string: "")!
 //        self.index = 0
     }
@@ -47,7 +50,7 @@ class Track: Decodable {
 //
 }
 
+
 class TrackStore {
     let tracks = MutableProperty([Track]())
-    
 }

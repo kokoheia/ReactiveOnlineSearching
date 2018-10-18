@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		55D060272175935C0046A000 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D060262175935C0046A000 /* AppDelegate.swift */; };
-		55D060292175935C0046A000 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D060282175935C0046A000 /* ViewController.swift */; };
+		55D060292175935C0046A000 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D060282175935C0046A000 /* HomeViewController.swift */; };
 		55D0602C2175935C0046A000 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55D0602A2175935C0046A000 /* Main.storyboard */; };
 		55D0602E2175935E0046A000 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55D0602D2175935E0046A000 /* Assets.xcassets */; };
 		55D060312175935E0046A000 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55D0602F2175935E0046A000 /* LaunchScreen.storyboard */; };
 		55D060542176CAB40046A000 /* Changeset.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D060532176CAB40046A000 /* Changeset.framework */; };
 		9E9010962175E16600BE9AD3 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9010952175E16600BE9AD3 /* Track.swift */; };
-		9E9010982175E1A000BE9AD3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9010972175E1A000BE9AD3 /* ViewModel.swift */; };
+		9E9010982175E1A000BE9AD3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9010972175E1A000BE9AD3 /* HomeViewModel.swift */; };
 		9E90109C2175F28B00BE9AD3 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E90109B2175F28B00BE9AD3 /* TrackCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		55D060232175935C0046A000 /* ReactiveOnlineSearching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveOnlineSearching.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D060262175935C0046A000 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		55D060282175935C0046A000 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		55D060282175935C0046A000 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		55D0602B2175935C0046A000 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55D0602D2175935E0046A000 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55D060302175935E0046A000 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,7 +32,7 @@
 		55D0604321759D840046A000 /* ReactiveMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveMapKit.framework; path = Carthage/Build/iOS/ReactiveMapKit.framework; sourceTree = "<group>"; };
 		55D060532176CAB40046A000 /* Changeset.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Changeset.framework; path = Carthage/Build/iOS/Changeset.framework; sourceTree = "<group>"; };
 		9E9010952175E16600BE9AD3 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
-		9E9010972175E1A000BE9AD3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		9E9010972175E1A000BE9AD3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		9E90109B2175F28B00BE9AD3 /* TrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,11 +68,10 @@
 		55D060252175935C0046A000 /* ReactiveOnlineSearching */ = {
 			isa = PBXGroup;
 			children = (
-				9E90109B2175F28B00BE9AD3 /* TrackCell.swift */,
+				55D325C321788BB800037B71 /* Model */,
+				55D325C221788BA200037B71 /* ViewModel */,
+				55D325C121788B9000037B71 /* View */,
 				55D060262175935C0046A000 /* AppDelegate.swift */,
-				55D060282175935C0046A000 /* ViewController.swift */,
-				9E9010952175E16600BE9AD3 /* Track.swift */,
-				9E9010972175E1A000BE9AD3 /* ViewModel.swift */,
 				55D0602A2175935C0046A000 /* Main.storyboard */,
 				55D0602D2175935E0046A000 /* Assets.xcassets */,
 				55D0602F2175935E0046A000 /* LaunchScreen.storyboard */,
@@ -91,6 +90,31 @@
 				55D06039217595A40046A000 /* Result.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		55D325C121788B9000037B71 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9E90109B2175F28B00BE9AD3 /* TrackCell.swift */,
+				55D060282175935C0046A000 /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		55D325C221788BA200037B71 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9E9010972175E1A000BE9AD3 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		55D325C321788BB800037B71 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9E9010952175E16600BE9AD3 /* Track.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,9 +215,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E90109C2175F28B00BE9AD3 /* TrackCell.swift in Sources */,
-				55D060292175935C0046A000 /* ViewController.swift in Sources */,
+				55D060292175935C0046A000 /* HomeViewController.swift in Sources */,
 				55D060272175935C0046A000 /* AppDelegate.swift in Sources */,
-				9E9010982175E1A000BE9AD3 /* ViewModel.swift in Sources */,
+				9E9010982175E1A000BE9AD3 /* HomeViewModel.swift in Sources */,
 				9E9010962175E16600BE9AD3 /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
