@@ -14,6 +14,7 @@ import ReactiveSwift
 
 final class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
@@ -33,7 +34,9 @@ final class HomeViewController: UIViewController, UITableViewDelegate, UITableVi
         self.viewModel = HomeViewModel(searchStrings: searchStrings)
         
         //searchBarのtextはviewModelのsearchStringsを参照
-        self.searchBar.reactive.text <~ viewModel.searchStrings
+        if let navItem = self.navigationBar.topItem {
+            navItem.reactive.title <~ viewModel.searchStrings
+        }
         
         //viewModelのtracksが変わる度にtableViewをupdateする。
         self.viewModel.trackChangeset.producer.startWithValues { edits in

@@ -60,7 +60,6 @@ final class HomeViewModel {
             switch event {
             case let .value(results):
                 self.tracks = results
-                
             case let .failed(error):
                 print("Search error: \(error)")
                 
@@ -101,8 +100,6 @@ final class HomeViewModel {
         
         return resultTracks
     }
-    
-    
 }
 
 struct CellViewModel {
