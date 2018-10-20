@@ -19,7 +19,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var viewModel: HomeViewModel!
     let trackCell = "trackCell"
-
     
     override func viewDidLoad() {
         super.viewDidLoad()

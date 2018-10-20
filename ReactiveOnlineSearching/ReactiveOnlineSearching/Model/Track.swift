@@ -15,25 +15,10 @@ class Track: Decodable, Equatable {
     let artistName: String
     let index: Int
     
-//    let previewURL: URL
-//    var downloaded = false
-    
-    init(name: String, artist: String, previewURL: URL, index: Int) {
-        self.trackName = name
-        self.artistName = artist
-        self.index = index
-        
-//        self.previewURL = previewURL
-
-    }
-    
     init(dict: Dictionary<String, Any>) {
         self.trackName = dict["trackName"] as! String
         self.artistName = dict["artistName"] as! String
         self.index = 0
-        
-//        self.previewURL = URL(string: "")!
-//        self.index = 0
     }
     
     static func == (lhs: Track, rhs: Track) -> Bool {
@@ -44,10 +29,6 @@ class Track: Decodable, Equatable {
         }
     }
     
-//    func generate() -> Generatortype {
-//        return self
-//    }
-//
 }
 
 

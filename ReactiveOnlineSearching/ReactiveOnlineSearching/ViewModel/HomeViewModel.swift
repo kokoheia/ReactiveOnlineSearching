@@ -113,15 +113,9 @@ struct CellViewModel {
     let artist: String
     let index: Int
     
-//    let previewURL: URL
-//    var downloaded = false
-    
     init(with track: Track) {
         self.name = track.trackName
         self.artist = track.artistName
         self.index = track.index
-        
-//        self.previewURL = track.previewURL
-//        self.downloaded = track.downloaded
     }
 }

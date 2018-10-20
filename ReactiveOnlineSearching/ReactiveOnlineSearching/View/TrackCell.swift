@@ -19,17 +19,10 @@ class TrackCell: UITableViewCell {
     }
     
     @IBOutlet weak var artistLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var downloadButton: UIButton!
-    
+    @IBOutlet weak var titleLabel: UILabel!    
     
     func configure(track: Track, downloaded: Bool) {
         titleLabel.text = track.trackName
         artistLabel.text = track.artistName
-        
-        
-        // If the track is already downloaded, enable cell selection and hide the Download button
-//        selectionStyle = downloaded ? UITableViewCell.SelectionStyle.gray : UITableViewCell.SelectionStyle.none
-//        downloadButton.isHidden = downloaded
     }
 }
