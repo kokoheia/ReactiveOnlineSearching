@@ -32,8 +32,8 @@ final class HomeViewModel {
         return tracks.count
     }
     
-    func createCellViewModel(for index: Int) -> CellViewModel {
-        return CellViewModel(with: tracks[index])
+    func createCellViewModel(for index: Int) -> TrackCellViewModel {
+        return TrackCellViewModel(with: tracks[index])
     }
     
     init(searchStrings: Signal<String?, NoError>) {
@@ -102,14 +102,3 @@ final class HomeViewModel {
     }
 }
 
-struct CellViewModel {
-    let name: String
-    let artist: String
-    let index: Int
-    
-    init(with track: Track) {
-        self.name = track.trackName
-        self.artist = track.artistName
-        self.index = track.index
-    }
-}
