@@ -33,7 +33,7 @@ final class HomeViewController: UIViewController, UITableViewDelegate, UITableVi
         //※viewModel中で、searchBarのtextを常にObserveしてviewModelを更新している
         self.viewModel = HomeViewModel(searchStrings: searchStrings)
         
-        //searchBarのtextはviewModelのsearchStringsを参照
+        //navigationBarのtextはviewModelのsearchStringsを参照
         if let navItem = self.navigationBar.topItem {
             navItem.reactive.title <~ viewModel.searchStrings
         }
