@@ -9,7 +9,7 @@
 import UIKit
 
 
-class TrackCell: UITableViewCell {
+final class TrackCell: UITableViewCell {
     
     var viewModel: CellViewModel! {
         didSet {
@@ -19,7 +19,7 @@ class TrackCell: UITableViewCell {
     }
     
     @IBOutlet weak var artistLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!    
+    @IBOutlet weak var titleLabel: UILabel!
     
     func configure(track: Track, downloaded: Bool) {
         titleLabel.text = track.trackName

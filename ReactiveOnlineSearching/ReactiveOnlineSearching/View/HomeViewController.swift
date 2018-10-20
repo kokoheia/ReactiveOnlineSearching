@@ -12,13 +12,13 @@ import ReactiveSwift
 import ReactiveMapKit
 import Result
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+final class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel: HomeViewModel!
-    let trackCell = "trackCell"
+    private var viewModel: HomeViewModel!
+    private let trackCell = "trackCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()

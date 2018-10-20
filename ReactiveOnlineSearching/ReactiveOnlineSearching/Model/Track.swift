@@ -9,7 +9,7 @@
 import Foundation
 import ReactiveSwift
 
-class Track: Decodable, Equatable {
+final class Track: Decodable, Equatable {
     
     let trackName: String
     let artistName: String
@@ -32,6 +32,6 @@ class Track: Decodable, Equatable {
 }
 
 
-class TrackStore {
+final class TrackStore {
     let tracks = MutableProperty([Track]())
 }

@@ -14,7 +14,7 @@ import Result
 import Changeset
 
 
-class HomeViewModel {
+final class HomeViewModel {
     
     let trackChangeset = MutableProperty([Changeset<[Track]>.Edit]())
     
