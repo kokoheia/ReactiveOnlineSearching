@@ -30,8 +30,3 @@ final class Track: Equatable {
     }
     
 }
-
-
-final class TrackStore {
-    let tracks = MutableProperty([Track]())
-}
