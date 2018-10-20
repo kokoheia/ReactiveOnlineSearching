@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  ReactiveOnlineSearching
 //
 //  Created by Kohei Arai on 2018/10/16.
@@ -9,8 +9,8 @@
 import UIKit
 import ReactiveCocoa
 import ReactiveSwift
-import ReactiveMapKit
-import Result
+//import ReactiveMapKit
+//import Result
 
 final class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 

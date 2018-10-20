@@ -9,7 +9,7 @@
 import Foundation
 import ReactiveSwift
 
-final class Track: Decodable, Equatable {
+final class Track: Equatable {
     
     let trackName: String
     let artistName: String

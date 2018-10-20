@@ -1,5 +1,5 @@
 //
-//  ViewModel.swift
+//  HomeViewModel.swift
 //  ReactiveOnlineSearching
 //
 //  Created by kokoheia on 2018/10/16.
@@ -9,9 +9,9 @@
 import Foundation
 import ReactiveSwift
 import ReactiveCocoa
-import ReactiveMapKit
 import Result
 import Changeset
+//import ReactiveMapKit
 
 
 final class HomeViewModel {
@@ -59,8 +59,8 @@ final class HomeViewModel {
         searchResults.observe { event in
             switch event {
             case let .value(results):
-                print("Search results: \(results)")
                 self.tracks = results
+                
             case let .failed(error):
                 print("Search error: \(error)")
                 
@@ -89,13 +89,10 @@ final class HomeViewModel {
             guard let json = try JSONSerialization.jsonObject(with: json, options: []) as? [String: Any] else {return []}
             
             if let results = json["results"] as? [Dictionary<String, Any>] {
-                print(results)
-                
-                for dict in results {
+                _ = results.map({ dict in
                     let track = Track(dict: dict)
                     resultTracks.append(track)
-                }
-                print(resultTracks)
+                })
             }
             
         } catch let jsonErr {

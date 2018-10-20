@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 final class TrackCell: UITableViewCell {
     
     var viewModel: CellViewModel! {
