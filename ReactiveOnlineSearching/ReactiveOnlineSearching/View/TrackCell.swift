@@ -20,8 +20,4 @@ final class TrackCell: UITableViewCell {
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
-    func configure(track: Track, downloaded: Bool) {
-        titleLabel.text = track.trackName
-        artistLabel.text = track.artistName
-    }
 }

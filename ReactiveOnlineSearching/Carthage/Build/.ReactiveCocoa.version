@@ -3,11 +3,11 @@
   "iOS" : [
     {
       "name" : "ReactiveMapKit",
-      "hash" : "0b83fe2256f0fe4186c914675ce1d0d6ae83234a4fb14a157f460a3fe1fa0c32"
+      "hash" : "2b9a345ac2f7f043c19ca018d4e75c0e56aaf67bd533fa57f7d5480447e8814d"
     },
     {
       "name" : "ReactiveCocoa",
-      "hash" : "67a170a0e07e0a398d10d9f50956ca7d3e0a8851fd4a0f1f594cc6a2da00d959"
+      "hash" : "221939ab93fb7885d6afd317a66dbe704f39c5a1ca868148902e4c8e689c637d"
     }
   ]
 }

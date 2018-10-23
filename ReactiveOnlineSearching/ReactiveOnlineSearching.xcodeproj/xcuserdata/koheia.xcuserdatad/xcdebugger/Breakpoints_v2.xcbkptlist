@@ -2,4 +2,54 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ReactiveOnlineSearching/View/TrackCell.swift"
+            timestampString = "561994182.190318"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "TrackCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ReactiveOnlineSearching.TrackCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; ReactiveOnlineSearching.TrackCell"
+                  moduleName = "ReactiveOnlineSearching"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/koheia/Desktop/Developer/ReactiveOnlineSearching/ReactiveOnlineSearching/ReactiveOnlineSearching/ReactiveOnlineSearching/View/TrackCell.swift"
+                  timestampString = "561994183.4035881"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ReactiveOnlineSearching.TrackCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ReactiveOnlineSearching.TrackCell&gt;"
+                  moduleName = "ReactiveOnlineSearching"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/koheia/Desktop/Developer/ReactiveOnlineSearching/ReactiveOnlineSearching/ReactiveOnlineSearching/ReactiveOnlineSearching/View/TrackCell.swift"
+                  timestampString = "561994183.410288"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
